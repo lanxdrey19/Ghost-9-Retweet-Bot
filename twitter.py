@@ -18,8 +18,8 @@ api = tweepy.API(auth,wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 
 
 
-searchTerms = ["ghost9","ghost 9","Ghost9","Ghost 9","GHOST9","GHOST 9"]
-nrTweets = 5
+searchTerms = ["#고스트나인"]
+nrTweets = 1
 
 while True:
 
@@ -28,8 +28,9 @@ while True:
             try:
                 tweet.favorite()
                 tweet.retweet()
-                time.sleep(300)
+                time.sleep(60)
             except tweepy.TweepError as e:
                 print(e.reason)
             except StopIteration:
                 break
+        time.sleep(300)
